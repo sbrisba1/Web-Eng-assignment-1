@@ -1,0 +1,57 @@
+:root {
+  --border-color: #999;
+}
+
+body {
+  overflow: hidden;
+  color: black;
+
+  grid-template-areas: 
+      "section header"
+      "section main"
+      "footer footer";
+
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  
+}
+
+body > section {
+  border-right: 1px solid var(--border-color);
+  grid-area: section;
+  & ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+
+    & li > a {
+      color: #999;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    & li > a:hover {
+      color: black;
+    }
+  }
+}
+
+body > header {
+  border-bottom: 1px solid var(--border-color);
+  grid-area: header;
+  & h1 {
+    font-size: 1.75rem;
+    margin: 0;
+    flex-grow: 1;
+  }
+}
+
+body > main {
+  grid-area: main;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+body > footer {
+  grid-area: footer;
+  border-top: 1px solid var(--border-color);
+  background-color: #f0f0f0;
+}

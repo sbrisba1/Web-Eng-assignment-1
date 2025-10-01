@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-webapp
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-webapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-webapp
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
+    spec:
+      nodeSelector:
+        course: fwe2023
+      containers:
+      - name: {{ .Release.Name }}-webapp
+        image: {{ .Values.image.name }}-webapp:{{ .Values.image.tag }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5173
+        resources:
+          limits:
+            memory: "200M"
+          requests:
+            memory: "50M"
