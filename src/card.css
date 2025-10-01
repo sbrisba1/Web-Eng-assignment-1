@@ -5,7 +5,6 @@
 }
 
 body{
-  
   & main{
     display: flex;
     flex-direction: row;
@@ -13,10 +12,7 @@ body{
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: space-between;
-    padding-bottom: 4rem;
-    row-gap: 1rem;
-
-    
+    row-gap: 1rem; 
    }
 }
 
@@ -70,8 +66,6 @@ article {
     overflow: hidden;
   }
 
-  
-
   & footer {
     
 
@@ -95,8 +89,6 @@ article {
       & li:not(:first-child){
         border-left: 1px solid var(--border-color);
       }
-
-      
 
     }
   }

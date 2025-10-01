@@ -5,6 +5,7 @@
 body {
   overflow: hidden;
   color: black;
+  display: grid;
 
   grid-template-areas: 
       "section header"
@@ -28,8 +29,9 @@ body > section {
       font-size: 14px;
       text-decoration: none;
     }
+    
     & li > a:hover {
-      color: black;
+      color: black; 
     }
   }
 }
@@ -37,9 +39,16 @@ body > section {
 body > header {
   border-bottom: 1px solid var(--border-color);
   grid-area: header;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   & h1 {
     font-size: 1.75rem;
     margin: 0;
+    flex-grow: 100;
+  }
+
+  & i{
     flex-grow: 1;
   }
 }
@@ -54,4 +63,11 @@ body > footer {
   grid-area: footer;
   border-top: 1px solid var(--border-color);
   background-color: #f0f0f0;
+
+  & div{
+    display: flex;
+    justify-content: center;
+  }
 }
+
+
