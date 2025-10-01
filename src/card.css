@@ -8,19 +8,19 @@ body{
   & main{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
     align-items: flex-start;
-    align-content: space-between;
-    row-gap: 1rem; 
+    align-content: flex-start;
+   
    }
 }
 
 article {
  display: flex;
  flex-direction: column;
-
  overflow: hidden;
+ margin-top: 10px;
+ margin-left: 10px;
 
 
   border: 1px solid var(--border-color);
@@ -64,6 +64,7 @@ article {
    & main:has(img){
     padding: 0;
     overflow: hidden;
+    margin: 0;
   }
 
   & footer {
