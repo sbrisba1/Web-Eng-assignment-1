@@ -12,7 +12,7 @@ body {
       "footer footer";
 
   grid-template-columns: 150px 1fr;
-  /*grid-template-rows: 60px (1fr-20px) 20px; TOGLIENDO STA ROBA SI RISOLVE PROBLEMA BIANCO SOPRA FOOTER*/
+  grid-template-rows: 60px 1fr 20px; /*CORRETTO colore bianco sopra footer*/
   height: 100vh;
 
    @media (max-width: 600px){
@@ -87,7 +87,7 @@ body > header {
 
 body > main {
   grid-area: main;
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */ /* TOGLIENDO STA ROBA SI RISOLVE PROBLEMA BIANCO SOPRA FOOTER */
   overflow-y: scroll;
 }
 
