@@ -11,7 +11,7 @@ body{
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: flex-start;
-   
+    padding-bottom: 10px;
    }
 }
 

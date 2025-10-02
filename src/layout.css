@@ -1,5 +1,4 @@
 :root {
-  --border-color: #999;
 }
 
 body {
@@ -12,9 +11,14 @@ body {
       "section main"
       "footer footer";
 
-  grid-template-columns: 100px 1fr;
-  grid-template-rows: 60px 1fr 20px;
+  grid-template-columns: 150px 1fr;
+  /*grid-template-rows: 60px (1fr-20px) 20px; TOGLIENDO STA ROBA SI RISOLVE PROBLEMA BIANCO SOPRA FOOTER*/
   height: 100vh;
+
+   @media (max-width: 600px){
+      grid-template-columns: 30px 1fr;
+   }
+  
   
 }
 
@@ -22,9 +26,22 @@ body > section {
   border-right: 1px solid var(--border-color);
   grid-area: section;
   & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     list-style-type: none;
     padding-inline-start: 0;
-
+    margin: 0;
+    
+    & li {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+      & span{
+        display: none;
+      }
+    }
+ 
     & li > a {
       color: #999;
       font-size: 14px;
@@ -33,6 +50,18 @@ body > section {
 
     & li > a:hover {
       color: black; 
+
+    }    
+  }
+
+
+  @media (min-width: 600px){
+    padding-left: 8px;
+    & ul li {
+      justify-content: flex-start;
+      & span{
+        display: inline;
+      }
     }
   }
 }
@@ -46,13 +75,13 @@ body > header {
 
   & h1 {
     font-size: 1.75rem;
-    margin: 5px;
+    padding: 5px;
     flex-grow: 100;
   }
 
   & i{
     flex-grow: 1;
-    margin: 5px;
+    padding: 5px;
   }
 }
 
@@ -66,6 +95,7 @@ body > footer {
   grid-area: footer;
   border-top: 1px solid var(--border-color);
   background-color: #f0f0f0;
+  
    
 
   & div{
@@ -75,8 +105,8 @@ body > footer {
   }
 
   & i{
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
