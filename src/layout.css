@@ -1,4 +1,7 @@
 :root {
+  --border-color: hsl(0, 0%, 51%);
+  --border-radius: 20px;
+  --space: 1rem;
 }
 
 body {
@@ -41,7 +44,7 @@ body > section {
       justify-content: center;
       padding-top: 1rem;
       & span{
-        display: none;
+        display: none; /*hides the text on small screens*/
       }
     }
  
@@ -63,7 +66,7 @@ body > section {
     & ul li {
       justify-content: flex-start;
       & span{
-        display: inline;
+        display: inline; /*shows the text on larger screens*/
       }
     }
   }
@@ -95,7 +98,154 @@ body > main {
   grid-area: main;
   /* height: calc(100vh - 100px); */ /* TOGLIENDO STA ROBA SI RISOLVE PROBLEMA BIANCO SOPRA FOOTER */
   overflow-y: scroll;
+
 }
+
+main > form {
+  /* height: calc(100vh - 100px); */ /* TOGLIENDO STA ROBA SI RISOLVE PROBLEMA BIANCO SOPRA FOOTER */
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem 5rem;
+  padding: 2rem;
+  max-width: 800px;
+  align-items: start;
+
+  @media (max-width: 768px) { /* switch to one column design for smaller screens */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Form styling */
+.form-group {
+  display: contents;
+}
+
+.form-group > label { 
+  color: #1890ff;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+}
+
+.form-group input[type="text"], /* pretty form field */
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  max-width: 400px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.form-group input[type="text"]:focus, /* blue focus effect on field */
+.form-group input[type="email"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 0.25rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  cursor: pointer;
+}
+
+/* Checkbox */
+.checkbox-group {
+  grid-column: 2;
+
+  @media (max-width: 768px) {
+    grid-column: 1;
+  }
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #000;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  grid-column: 2;
+
+  @media (max-width: 768px) {
+    grid-column: 1;
+  }
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #1890ff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #40a9ff;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background-color: #d9d9d9;
+}
+
 
 body > footer {
   grid-area: footer;

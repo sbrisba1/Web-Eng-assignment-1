@@ -44,12 +44,12 @@
       <form action="/submit" methods="POST">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required>
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
         </div>
 
         <div class="form-group">
@@ -57,30 +57,30 @@
           <input type="date" id="birthday" name="birthday" required>
         </div>
 
-        <div class="form-group full-width">
-        <label>What do you like the most?</label>
-          <div class="options">
-            <label><input type="radio" name="choice" value="JS"> JS</label>
+        <div class="form-group">
+          <label>What do you like the most?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="choice" value="JS" > JS</label>
             <label><input type="radio" name="choice" value="HTML"> HTML</label>
             <label><input type="radio" name="choice" value="CSS"> CSS</label>
-            <label><input type="radio" name="choice" value="Nodecison"> Cannot make a decision</label>
-
-          </div>
+            <label><input type="radio" name="choice" value="Cannot make a decision"> Cannot make a decision.</label>
         </div>
 
-        <div class="form-group full-width">
-          <label for="message">Message:</label>
-          <textarea id="Your message" name="message" rows="4"></textarea>
+        <div class="form-group">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Enter your message here..."></textarea>
         </div>
 
-        <div class="form-group full-width">
+        <div class="checkbox-group">
           <label>
-            <input type="checkbox" name="terms" required>Yes, I want to receive your very important spam messages!</a>
+            <input type="checkbox" name="terms" required>Yes, I want to receive your very important spam messages!
           </label>
         </div>
 
-        <button type="submit">Send</button>
-        <button type="reset">Reset</button>
+        <div class="button-group">
+          <button type="submit" class="btn-primary">Send</button>
+          <button type="reset" class="btn-secondary">Reset</button>
+        </div>
       </form>
 <!--      TODO add until here-->
     </main>
