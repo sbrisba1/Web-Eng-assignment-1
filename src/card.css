@@ -89,7 +89,7 @@ article {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-
+      margin: 0;
       align-items: center;
       
 
@@ -97,11 +97,20 @@ article {
         flex: 1;
         display: flex;
         justify-content:  center;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
       }
 
       & li:not(:first-child){
         border-left: 1px solid var(--border-color);
       }
+
+       & > li:hover {
+      color: rgb(103, 103, 103); 
+
+    }   
+
+
 
     }
   }
