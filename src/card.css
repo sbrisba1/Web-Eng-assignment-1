@@ -5,7 +5,7 @@
 }
 
 
-
+body {
   & main{
     display: flex;
     flex-direction: row;
@@ -14,48 +14,69 @@
     align-content: flex-start;
     justify-content: space-evenly;
     padding-bottom: 10px;
-   }
-
+    
+    
+    
+  }
+}
 
 article {
- display: flex;
- flex-direction: column;
- overflow: hidden;
- margin-top: 10px;
- margin-left: 10px;
-
-
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+  
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   width: 350px;
   line-height: 1.5rem;
   
-
+  
+  /* transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
   & header {
     display: flex;
     justify-content: space-between;
-
+    
     border-bottom: 1px solid var(--border-color);
     padding: var(--space);
-
+    
     & a {
       display: flex;
       text-decoration: none;
       align-self: center;
       align-items: center;
+      
+        transition: transform 0.3s ease;
     }
-
+    
+    & > a:hover { /*animation when hovering the icons*/
+      color: rgb(0, 15, 184);
+        transform: scale(1.1);
+    }
+    
     & h1 {
       font-size: 1.75rem;
       color: black;
     }
-
+    
+    
+    
+    
   }
-
+  
   & main {
     display: flex;
     flex-direction: column;
-   
+    
     
     padding: var(--space);
     
@@ -65,23 +86,23 @@ article {
       display: block;
       width: inherit;
     }
-
+    
     & h1 {
       font-size: 1.75rem;
       color: black;
     }
-
+    
   }
-
-   & main:has(img){
+  
+  & main:has(img){
     padding: 0;
     overflow: hidden;
     margin: 0;
   }
-
+  
   & footer {
     
-
+    
     border-top: 1px solid var(--border-color);
     & ul {
       padding: 0;
@@ -92,26 +113,34 @@ article {
       margin: 0;
       align-items: center;
       
-
+      
       & li{
         flex: 1;
         display: flex;
         justify-content:  center;
         padding-top: 1rem;
-        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        color: rgba(0, 0, 0, 0.853);
+        & i {
+          transition: transform 0.3s ease;
+        }
+        
       }
-
+      
       & li:not(:first-child){
         border-left: 1px solid var(--border-color);
       }
-
-       & > li:hover {
-      color: rgb(103, 103, 103); 
-
-    }   
-
-
-
+      
+      & > li:hover { /*animation when hovering the icons*/
+        color: rgb(0, 0, 0); 
+        & i {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }   
+      
+      
+      
     }
   }
 }

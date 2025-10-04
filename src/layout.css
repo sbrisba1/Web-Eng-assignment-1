@@ -49,14 +49,16 @@ body > section {
     }
  
     & li > a {
-      color: #999;
+      color: #000000;
       font-size: 14px;
       text-decoration: none;
+
+      transition: all 0.3s ease;
     }
 
-    & li > a:hover {
+    & li > a:hover { /*animation when hovering the icons*/
       color: black; 
-
+      transform: scale(1.05);
     }    
   }
 
@@ -91,6 +93,12 @@ body > header {
   & i{
     flex-grow: 1;
     padding: 5px;
+    transition: all 0.3s;
+  }
+
+  & i:hover{ /*animation when hovering the icons*/
+    transform: scale(1.2);
+    cursor: pointer;
   }
 }
 
