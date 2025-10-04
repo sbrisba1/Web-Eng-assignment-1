@@ -2,6 +2,26 @@
   --border-color: hsl(0, 0%, 51%);
   --border-radius: 20px;
   --space: 1rem;
+  --menu-width: 150px;
+  --menu-collapsed-width: 30px;
+}
+
+/* Hide the checkbox */
+.menu-control {
+  display: none;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
 }
 
 body {
@@ -14,15 +34,34 @@ body {
       "section main"
       "footer footer";
 
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: var(--menu-width) 1fr;
   grid-template-rows: 60px 1fr 30px; /*CORRETTO colore bianco sopra footer*/
   height: 100vh;
+  
+  transition: grid-template-columns 0.3s ease;
 
-   @media (max-width: 600px){
-      grid-template-columns: 30px 1fr;
-   }
+  @media (max-width: 600px){
+    grid-template-columns: var(--menu-collapsed-width) 1fr;
+  }
+}
+
+/* When checkbox is checked, collapse the menu */
+body:has(.menu-control:checked) {
+  grid-template-columns: var(--menu-collapsed-width) 1fr;
   
+  /* Hide menu text when collapsed */
+  & section ul {
+    padding: 0;
+    & li span {
+      display: none;
+    }
+  }
+    
   
+  /* Rotate the toggle icon when menu is collapsed */
+  & .menu-toggle {
+    transform: rotate(90deg);
+  }
 }
 
 body > section {

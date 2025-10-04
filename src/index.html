@@ -11,14 +11,22 @@
     <script src="./main.ts" type="module"></script>
   </head>
   <body>
+    
     <header>
       <h1>Open data explorer</h1>
       <i class="fa fa-solid fa-user"></i>
       <i class="fa fa-solid fa-bars"></i>
     </header>
 
+    <input type="checkbox" id="menu-control" class="menu-control" />
     <section>
+      
       <ul>
+        <li>
+          <label for="menu-control" class="menu-toggle">
+            <i class="fa fa-solid fa-bars"></i>
+          </label>
+        </li>
         <li>
           <a href="/" title="Home"
             ><i class="fa-solid fa-home"></i> <span>Home</span></a
